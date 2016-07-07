@@ -1,4 +1,7 @@
 #!/bin/sh
+
+ip=$1
+
 cat <<END
 # Port to listen on
 wan.port = 2408
@@ -84,6 +87,6 @@ stats.listen = :24088
 # Set activation.railgun_host to the external IP, or a hostname that
 # resolves to the external IP, of your Railgun instance.
 activation.token = $ACCOUNT_TOKEN
-activation.railgun_host = $(curl http://169.254.169.254/latest/meta-data/public-ipv4)
+activation.railgun_host = $ip
 
 END

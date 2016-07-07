@@ -7,7 +7,6 @@ RUN apt-get update && \
   curl -C - https://pkg.cloudflare.com/pubkey.gpg | apt-key add - && \
   apt-get update && \
   apt-get install -y railgun-stable && \
-  apt-get purge curl -y && \
   apt-get autoremove -y &&  \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
